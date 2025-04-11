@@ -1,2 +1,14 @@
-# npm-button-package
-A customizable React button component This lightweight npm package provides a reusable React button component with customizable properties. You can easily adjust the theme, size, and label using the following props: isDark, width, height, and text.
+# React Custom Button Component
+
+A lightweight and reusable React button component published as an npm package.
+
+## ✨ Features
+
+- Fully customizable
+- Supports light and dark modes
+- Easy to use in any React project
+
+## 📦 Installation
+
+```bash
+npm install bismillah-btn
