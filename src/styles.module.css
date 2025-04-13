@@ -1,0 +1,457 @@
+/* add css module styles here (optional) */
+
+.test {
+  margin: 2em;
+  padding: 0.5em;
+  border: 2px solid #000;
+  font-size: 2em;
+  text-align: center;
+}
+
+.buttonContainer {
+  position: relative;
+  display: inline-block;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+  animation: shadowWave 6s infinite ease-in-out;
+}
+
+.bismillahButton {
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttonText {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.light {
+  position: relative;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #e1f5fe 0%,
+    #81d4fa 20%,
+    #4fc3f7 35%,
+    #29b6f6 45%,
+    #03a9f4 55%,
+    #0288d1 65%,
+    #0277bd 75%,
+    #01579b 85%,
+    #1a237e 100%
+  );
+  background-size: 300% 300%;
+  animation: deepOceanFlow 6s infinite ease-in-out;
+}
+
+.light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(225, 245, 254, 0.9) 0%,
+    rgba(179, 229, 252, 0.6) 20%,
+    rgba(129, 212, 250, 0.4) 40%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.light:hover::before {
+  opacity: 1;
+}
+
+.light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0.4) 40%,
+    transparent 60%
+  );
+  opacity: 0;
+  transform: scale(0.2);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.light.rippling::after {
+  opacity: 1;
+  transform: scale(4);
+}
+
+.dark {
+  position: relative;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #ffffff 0%,
+    #e0e0e0 15%,
+    #bdbdbd 25%,
+    #9e9e9e 35%,
+    #757575 45%,
+    #616161 55%,
+    #424242 65%,
+    #212121 80%,
+    #000000 100%
+  );
+  background-size: 300% 300%;
+  animation: deepOceanFlow 6s infinite ease-in-out;
+}
+
+.dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(224, 224, 224, 0.6) 20%,
+    rgba(189, 189, 189, 0.4) 40%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.dark:hover::before {
+  opacity: 1;
+}
+
+.dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0.4) 40%,
+    transparent 60%
+  );
+  opacity: 0;
+  transform: scale(0.2);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.dark.rippling::after {
+  opacity: 1;
+  transform: scale(4);
+}
+
+.dark .wave {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(189, 189, 189, 0.2) 30%,
+    transparent 70%
+  );
+  mix-blend-mode: overlay;
+}
+
+.dark .wave:nth-child(2) {
+  background: radial-gradient(
+    circle at center,
+    rgba(224, 224, 224, 0.25) 0%,
+    rgba(158, 158, 158, 0.15) 40%,
+    transparent 70%
+  );
+}
+
+.dark .wave:nth-child(3) {
+  background: radial-gradient(
+    circle at center,
+    rgba(189, 189, 189, 0.2) 0%,
+    rgba(117, 117, 117, 0.1) 50%,
+    transparent 70%
+  );
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 200% 100%;
+  }
+  75% {
+    background-position: 100% 200%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes pulseGradient {
+  0% {
+    background-size: 100% 100%;
+    opacity: 0.7;
+  }
+  50% {
+    background-size: 200% 200%;
+    opacity: 0.3;
+  }
+  100% {
+    background-size: 100% 100%;
+    opacity: 0.7;
+  }
+}
+
+@keyframes waterFlow {
+  0% {
+    background-position: 0% 0%;
+    --mouse-x: 45%;
+    --mouse-y: 45%;
+  }
+  20% {
+    background-position: 50% 20%;
+    --mouse-x: 55%;
+    --mouse-y: 48%;
+  }
+  40% {
+    background-position: 100% 50%;
+    --mouse-x: 52%;
+    --mouse-y: 52%;
+  }
+  60% {
+    background-position: 50% 100%;
+    --mouse-x: 48%;
+    --mouse-y: 55%;
+  }
+  80% {
+    background-position: 20% 50%;
+    --mouse-x: 45%;
+    --mouse-y: 48%;
+  }
+  100% {
+    background-position: 0% 0%;
+    --mouse-x: 45%;
+    --mouse-y: 45%;
+  }
+}
+
+@keyframes waterGlow {
+  0% {
+    opacity: 0.7;
+    transform: scale(1) translate(0, 0);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.02) translate(1%, -1%);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1) translate(0, 0);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(1.02) translate(-1%, 1%);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.wave {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(3, 169, 244, 0.3) 0%,
+    rgba(2, 136, 209, 0.2) 30%,
+    transparent 70%
+  );
+  border-radius: 45%;
+  mix-blend-mode: screen;
+  animation: oceanWave 6s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transform-origin: center;
+}
+
+.wave:nth-child(2) {
+  animation-delay: -3s;
+  background: radial-gradient(
+    circle at center,
+    rgba(3, 169, 244, 0.25) 0%,
+    rgba(2, 136, 209, 0.15) 40%,
+    transparent 70%
+  );
+  border-radius: 47%;
+  animation-duration: 7s;
+}
+
+.wave:nth-child(3) {
+  animation-delay: -4s;
+  background: radial-gradient(
+    circle at center,
+    rgba(3, 169, 244, 0.2) 0%,
+    rgba(2, 136, 209, 0.1) 50%,
+    transparent 70%
+  );
+  border-radius: 43%;
+  animation-duration: 9s;
+}
+
+@keyframes oceanWave {
+  0%, 100% {
+    transform: rotate(0deg) scale(1) translate(0, 0);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1) translate(2%, 2%);
+  }
+  50% {
+    transform: rotate(180deg) scale(1) translate(0, 0);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1) translate(-2%, 2%);
+  }
+}
+
+@keyframes shadowWave {
+  0% {
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.3));
+  }
+  25% {
+    filter: drop-shadow(5px 8px 18px rgba(0, 0, 0, 0.35));
+  }
+  50% {
+    filter: drop-shadow(-2px 12px 20px rgba(0, 0, 0, 0.4));
+  }
+  75% {
+    filter: drop-shadow(-5px 8px 18px rgba(0, 0, 0, 0.35));
+  }
+  100% {
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.3));
+  }
+}
+
+.bismillahButton:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+  transition: all 0.4s ease;
+}
+
+.bismillahButton:active {
+  transform: translateY(1px) scale(0.98);
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  transition: all 0.2s ease;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleEffect 2s linear;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.4) 20%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+  }
+  20% {
+    transform: scale(4);
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(6);
+    width: 100px;
+    height: 100px;
+    opacity: 0.4;
+  }
+  60% {
+    transform: scale(8);
+    width: 150px;
+    height: 150px;
+    opacity: 0.3;
+  }
+  80% {
+    transform: scale(10);
+    width: 200px;
+    height: 200px;
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(12);
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+  }
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+@keyframes deepOceanFlow {
+  0%, 100% {
+    background-position: 0% 0%;
+    transform: scale(1);
+  }
+  25% {
+    background-position: 100% 25%;
+    transform: scale(1.02);
+  }
+  50% {
+    background-position: 200% 50%;
+    transform: scale(1);
+  }
+  75% {
+    background-position: 100% 75%;
+    transform: scale(1.02);
+  }
+}
