@@ -53,7 +53,6 @@ function App() {
 | Prop        | Type     | Description                                 |
 |-------------|----------|---------------------------------------------|
 | `text`      | `string` | The text to display on the button           |
-| `onClick`   | `func`   | Function to call on click                   |
 | `isDark`    | `boolean`| Optional: `true` or `false`                 |
 | `width`     | `string` | Button width, Optional: `'200px'`           |
 | `height`    | `string` | Button height, Optional: `'60px'`           |
