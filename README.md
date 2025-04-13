@@ -38,7 +38,7 @@ import '../node_modules/bismillah-btn/dist/index.css';
 function App() {
   return (
     <div>
-      <BismillahBtn label="Click Me" onClick={() => alert('Button clicked!')} />
+      <BismillahBtn isDark={false} text="Bismillah" width="200px" height="50px" />
     </div>
   );
 }
