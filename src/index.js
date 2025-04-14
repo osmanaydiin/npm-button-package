@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react'
 import styles from './styles.module.css'
 
-export const BismillahBtn = ({ text, isDark = false, width = '200px', height = '50px' }) => {
+export const BismillahBtn = ({ text, isDark = false, width = '200px', height = '50px', onClick }) => {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const buttonRef = useRef(null);
   const rippleTimeoutRef = useRef(null);
@@ -38,7 +38,11 @@ export const BismillahBtn = ({ text, isDark = false, width = '200px', height = '
         button.classList.remove(styles.rippling);
       }
     }, 1000);
-  }, []);
+
+    if (onClick) {
+      onClick(event);
+    }
+  }, [onClick]);
 
   return (
     <div className={styles.buttonContainer}>

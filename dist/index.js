@@ -12,7 +12,8 @@ var BismillahBtn = function BismillahBtn(_ref) {
     _ref$width = _ref.width,
     width = _ref$width === void 0 ? '200px' : _ref$width,
     _ref$height = _ref.height,
-    height = _ref$height === void 0 ? '50px' : _ref$height;
+    height = _ref$height === void 0 ? '50px' : _ref$height,
+    onClick = _ref.onClick;
   var _useState = React.useState({
       x: 50,
       y: 50
@@ -48,7 +49,10 @@ var BismillahBtn = function BismillahBtn(_ref) {
         button.classList.remove(styles.rippling);
       }
     }, 1000);
-  }, []);
+    if (onClick) {
+      onClick(event);
+    }
+  }, [onClick]);
   return /*#__PURE__*/React__default.createElement("div", {
     className: styles.buttonContainer
   }, /*#__PURE__*/React__default.createElement("button", {
